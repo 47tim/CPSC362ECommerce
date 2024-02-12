@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 500;
+const port = 5001;
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html', {root: __dirname});
+    res.sendFile('pages/index.html', {root: __dirname});
 });
 
 app.listen(port, () => { 
