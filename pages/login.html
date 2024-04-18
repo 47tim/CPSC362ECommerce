@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="login.css" />
 </head>
 <body>
-
-<div class="login-container">
-  <form class="login-form">
-    <h2>Login</h2>
-    <div class="input-group">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
+    <div class="login">
+        <div class="overlap-wrapper">
+            <div class="overlap">
+                <div class="rectangle"></div>
+                <div class="text-wrapper">Game Title</div>
+                <div class="sign-in-module">
+                    <div class="overlap-group">
+                        <div class="sign-in-top-text">
+                            <div class="div">
+                                <div class="text-wrapper-2">Sign In</div>
+                            </div>
+                        </div>
+                        <div class="password">
+                            <div class="div-wrapper">
+                                <div class="text-wrapper-3">PASSWORD</div>
+                            </div>
+                        </div>
+                        <div class="username">
+                            <div class="overlap-2">
+                                <div class="text-wrapper-3">USERNAME</div>
+                            </div>
+                        </div>
+                        <button class="log-in-button">
+                            <div class="overlap-3">
+                                <div class="text-wrapper-4">Login</div>
+                            </div>
+                        </button>
+                        <p class="don-t-have-an">
+                            <span class="span">Don’t have an account? </span>
+                            <span class="text-wrapper-5">Create one here.</span>
+                        </p>
+                        <div class="text-wrapper-6">Forgot Password?</div>
+                        <div class="check-box-sign-in">
+                            <div class="rectangle-2"></div>
+                            <div class="text-wrapper-7">Stay Signed In</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="input-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Log In</button>
-    <div class="links">
-      <button type="button" onclick="location.href='/create-account';">Create Account</button>
-      <button type="button" onclick="location.href='/recover-account';">Recover Account</button>
-    </div>
-  </form>
-</div>
-
 </body>
 </html>
