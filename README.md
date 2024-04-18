@@ -1,6 +1,6 @@
 # CPSC362ECommerce
 
-## I think I messed up somewhere so the index might not be working LOL - Johnny
+
 Hello Team,
 
 Setup:
