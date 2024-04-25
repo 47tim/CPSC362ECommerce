@@ -1,7 +1,9 @@
 function handleLogin() {
-  var userName = document.getElementsByClassName("username").value;
-  var password = document.getElementsByClassName("password").value;
+  var password = document.getElementById("password-input").value;
+  var userName = document.getElementById("username-input").value;
 
   console.log(userName);
   console.log(password);
+
+  window.location.href = "pages/index.html";
 }
