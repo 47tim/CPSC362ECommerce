@@ -76,8 +76,8 @@ login {
    }
    .login .overlap-wrapper {
     background-color: #a78655;
-    width: 1440px;
-    height: 1024px;
+    width: 144vw;
+    height: 102vw;
    }
    .login .overlap {
     position: relative;
@@ -88,8 +88,8 @@ login {
    }
    .login .rectangle {
      position: fixed;
-     width: 1234px;
-     height: 1493px;
+     width: 100vw;
+     height: 120vw;
      top: -10;
      left: -10;
      background-color: #353337;
@@ -110,8 +110,8 @@ login {
    }
    .login .sign-in-module {
     position: absolute;
-    width: 567px;
-    height: 795px;
+    width: 50vw;
+    height: 50vw;
     top: 114px;
     left: 624px;
    }
@@ -125,8 +125,8 @@ login {
     position: absolute;
     width: 245px;
     height: 76px;
-    top: 91px;
-    left: 160px;
+    top: 91vw;
+    left: 160vw;
    }
    .login .div {
     position: relative;
