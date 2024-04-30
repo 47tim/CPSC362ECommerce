@@ -11,7 +11,7 @@ app.use("/pages", express.static(path.join(__dirname, "pages")));
 
 // Serve login.html as the default route
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "pages/login.html"));
+  res.sendFile(path.join(__dirname, "pages/settings.html"));
 });
 
 app.listen(port, () => {

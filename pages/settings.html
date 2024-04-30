@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Settings</title>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="settings.css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-  <h1>Settings Page</h1>
-  
-</body>
+    <script src="settings.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="navBar">
+        <div class="gameIcon">Game icon here</div>
+        <div class="navBarItems">
+          <a href="index.html"><i class="fa fa-home fa-10x"></i></a>
+          <a href="#"><i class="fa fa-lock"></i></a>
+          <a href="settings.html"><i class="fa fa-gear"></i></a>
+          <a href="#"><i class="fa fa-sign-out"></i></a>
+        </div>
+      </div>
+      <div class="settingsContainer">
+        <div class="accountContainer">
+          <div class="accountInfoContainer">
+            <div class="accountInfo">
+              <h1>USER'S ICON HERE</h1>
+              <h1 class="accountName">Account Name:</h1>
+              <h1>Email:</h1>
+              <h1>Password:</h1>
+            </div>
+          </div>
+          <div class="accountBalanceContainer">
+            <div class="accountBalanceInfo">
+              <h1 class="accountBalance">Account Balance</h1>
+              <h1>$0.00</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="transactionContainer">
+          <div class="transactions">
+            <h1 class="transactionHistory">Transaction History</h1>
+            <div class="transactionsMade">
+              <div class="transactionDate">
+                <h2>Temp date</h2>
+              </div>
+              <div class="transactionItem">
+                <h2>Temp Item</h2>
+              </div>
+              <div class="transactionCost">
+                <h2>Temp cost</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

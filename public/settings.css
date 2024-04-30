@@ -1,0 +1,92 @@
+body {
+  background-color: #2c2c2c;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+.navBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #3a3a3a;
+}
+
+.navBar .navBarItems a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #bababa;
+  font-size: 75px;
+}
+
+.settingsContainer {
+  display: flex;
+  flex-direction: row;
+  margin-left: 350px;
+  margin-top: 25px;
+}
+
+.accountContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.accountInfoContainer {
+  background-color: #d9d9d9;
+  height: 600px;
+  width: 600px;
+}
+
+.accountInfo {
+  color: black;
+}
+
+.accountName {
+  background-color: #979797;
+  padding: 10px;
+}
+
+.accountBalanceContainer {
+  background-color: #d9d9d9;
+  margin-top: 50px;
+}
+
+.accountBalance {
+  background-color: #979797;
+  padding: 10px;
+}
+
+.gameIcon {
+  position: relative;
+  align-self: center;
+  top: -600px;
+  color: #bababa;
+}
+
+.transactions {
+  background-color: #d9d9d9;
+  margin-left: 200px;
+  margin-top: 100px;
+}
+
+.transactionHistory {
+  background-color: #979797;
+  padding: 10px;
+}
+
+.transactionsMade {
+  display: flex;
+  flex-direction: row;
+}
+
+.transactionDate,
+.transactionItem,
+.transactionCost {
+  margin-right: 20px;
+}
