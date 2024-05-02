@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('locker_bg.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    font-family: 'Arial', sans-serif;
+  }
+
+  .navBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 60px; 
+    height: 100vh;
+    background: #3a3a3a;
+}
+
+.navBar .navBarItems a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    color: #bababa;
+}
+
+.navBar .navBarItems a img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+.navBar .navBarItems a:hover img {
+    transform: scale(1.1); 
+}
