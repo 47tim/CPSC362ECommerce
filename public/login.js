@@ -5,5 +5,5 @@ function handleLogin() {
   console.log(userName);
   console.log(password);
 
-  window.location.href = "pages/index.html";
+  window.location.href = "pages/locker.html";
 }
