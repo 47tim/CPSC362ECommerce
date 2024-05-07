@@ -14,6 +14,11 @@ body {
   height: auto;
 }
 
+.skinName {
+  font-size: 15px;
+  color: #d9d9d9;
+}
+
 .underImg {
   width: 100%;
   display: flex;
@@ -56,12 +61,17 @@ body {
   border: 2px solid;
   width: 250px;
   height: 200px;
+
+  margin-right: 10px;
 }
 
 .buyButton {
   width: 100%;
 }
 
+.buyButton:hover {
+  cursor: pointer;
+}
 /* Navbar styling */
 .navBar {
   display: flex;

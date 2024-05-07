@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seasonal Items</title>
     <link rel="stylesheet" href="seasonalItems.css" />
+    <script src="seasonalItems.js"></script>
   </head>
   <body>
     <div class="main">
@@ -35,18 +36,30 @@
         <h1 class="pageTitle">Seasonal Items</h1>
       </div>
       <div class="skinContainer">
-        <div class="itemContainer1">
+        <div class="itemContainer">
           <img class="skins" src="icons/shop_weapon1.png" />
           <div class="underImg">
+            <h1 class="skinName">Skin 1</h1>
             <h1 class="priceTag">100 Coins</h1>
-            <button class="buyButton">BUY</button>
+            <button
+              class="buyButton"
+              onclick="confirmPurchase('Weapon 1', 100)"
+            >
+              BUY
+            </button>
           </div>
         </div>
-        <div class="itemContainer2">
+        <div class="itemContainer">
           <img class="skins" src="icons/shop_weapon1.png" />
           <div class="underImg">
-            <h1 class="priceTag">100 Coins</h1>
-            <button class="buyButton">BUY</button>
+            <h1 class="skinName">Skin 2</h1>
+            <h1 class="priceTag">200 Coins</h1>
+            <button
+              class="buyButton"
+              onclick="confirmPurchase('Weapon 2', 200)"
+            >
+              BUY
+            </button>
           </div>
         </div>
       </div>
