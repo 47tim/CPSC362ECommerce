@@ -5,7 +5,7 @@ function handleLogin() {
   console.log(userName);
   console.log(password);
 
-  window.location.href = "pages/locker.html";
+  window.location.href = "pages/shop.html";
   // const form = document.querySelector('form')
   // const username = document.querySelector('#username')
   // const password = document.querySelector('#password')
