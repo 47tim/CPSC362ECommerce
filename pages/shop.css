@@ -1,0 +1,179 @@
+body.shop {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('/icons/locker_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navBar {
+    position: fixed;
+    width: 50px;
+    height: 100%;
+    background-color: #333;
+    z-index: 1000;
+}
+
+.item-shop-title {
+    text-align: center;
+    font-size: 44px;
+    color: #000000;
+    padding: 5px;
+    background-color: #d4d4d48f;
+    width: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    height: calc(100vh - 60px);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.top-scroll {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px;
+    background-color: #251a1a;
+    border-radius: 10px;
+    white-space: nowrap;
+    gap: 12px;
+    width: 1050px;
+}
+
+.top-scroll .image-container {
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: 200px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.top-scroll .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.top-scroll .image-container:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.top-scroll .image-container:hover img {
+    filter: brightness(1.2);
+}
+
+
+.left-scroll {
+    grid-column: 1;
+    grid-row: 2;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #291818;
+    border-radius: 10px;
+    max-width: 250px;
+    height: 350px;
+    margin: 10px 20px 10px 10px;
+}
+
+.left-scroll .image-container {
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.left-scroll img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.bottom-right {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: #301212;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: start;
+    height: 800px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hot-items-title {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.item button {
+    width: 100%;
+    padding: 8px 16px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.item button:hover {
+    background-color: #463e3e;
+}
+
+.item-price {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
