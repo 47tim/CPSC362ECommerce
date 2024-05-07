@@ -45,6 +45,20 @@ body {
   margin-top: 25px;
 }
 
+.transactionDateTitle,
+.transactionItemTitle,
+.transactionCostTitle {
+  font-size: 20px;
+  margin-right: 65px;
+}
+
+.transactionGrid {
+  display: flex;
+  flex-direction: row;
+
+  border-bottom: 1px solid black;
+}
+
 .accountContainer {
   display: flex;
   flex-direction: column;
