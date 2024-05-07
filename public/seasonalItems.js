@@ -1,13 +1,20 @@
-var purchasedItemName = "";
-var purchasedItemPrice = 0;
-var purchaseDate;
+var userBalance = 1000;
 
 function confirmPurchase(itemName, price) {
+  if (userBalance < price) {
+    alert("Insufficient funds!");
+    return;
+  }
+
   var confirmPurchase = confirm(
     "Are you sure you want to buy " + itemName + " for " + price + " Coins?"
   );
 
   if (confirmPurchase) {
+    userBalance -= price;
+
+    document.querySelector(".coinBar").innerText = "Coins: " + userBalance;
+
     purchasedItemName = itemName;
     purchasedItemPrice = price;
     purchaseDate = new Date();
