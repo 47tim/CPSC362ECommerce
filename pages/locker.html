@@ -16,11 +16,32 @@
             <a href="account-settings.html"><img src="icons/settings.png" alt="Settings" title="Settings"></a>
             <a href="locker.html"><img src="icons/locker.png" alt="Locker" title="Locker"></a>
         </div>
+      </div>
 
-        <div class="content">
-            <model-viewer src="soldier.glb" alt="A 3D model of a character" ar camera-controls auto-rotate shadow-intensity="1" style="width: 800px; height: 800px;"></model-viewer>
+      <div class="content">
+        <div class="item-selection">
+            <h3>Skins</h3>
+            <div class="skins">
+                <div class="skin-box" data-model="soldier.glb">Soldier</div>
+                <div class="skin-box" data-model="zombie.glb">Zombie</div>
+            </div>
+            <h3>Weapons</h3>
+            <div class="weapons">
+                <div class="weapon-box" data-model="weapon1.glb">Weapon 1</div>
+            </div>
         </div>
-
+        <model-viewer src="soldier.glb" alt="A 3D model of a character" ar camera-controls auto-rotate shadow-intensity="1" style="width: 800px; height: 800px;"></model-viewer>
+    </div>
+    
+    
   <script src="index.js"></script>
+  <script>
+    document.querySelectorAll('.skin-box, .weapon-box').forEach(box => {
+        box.addEventListener('click', function() {
+            const modelPath = this.getAttribute('data-model');
+            document.querySelector('model-viewer').src = modelPath;
+        });
+    });
+</script>
   </body>
 </html>
