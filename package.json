@@ -2,15 +2,9 @@
   "name": "cpsc362ecommerce",
   "version": "1.0.0",
   "description": "",
-<<<<<<< HEAD
   "main": "app.js",
   "scripts": {
     "test": "mocha",
-=======
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
->>>>>>> 165a0a237cf07db2f6799baa6749165599d45254
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -27,20 +21,14 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
-<<<<<<< HEAD
     "ejs": "^3.1.10",
-=======
->>>>>>> 165a0a237cf07db2f6799baa6749165599d45254
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.2",
     "nodemon": "^3.1.0"
-<<<<<<< HEAD
   },
   "devDependencies": {
     "chai": "^5.1.0",
     "mocha": "^10.4.0"
-=======
->>>>>>> 165a0a237cf07db2f6799baa6749165599d45254
   }
 }
