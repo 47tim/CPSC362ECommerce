@@ -6,16 +6,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-<<<<<<< HEAD
-.navBar {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  position: fixed;
-  left: 0;
-  width: 250px;
-  height: 100%;
-=======
 
 /* Navbar styling */
 .navBar {
@@ -27,18 +17,11 @@ body {
   top: 0;
   width: 60px; /* Reduced width */
   height: 100vh;
->>>>>>> 165a0a237cf07db2f6799baa6749165599d45254
   background: #3a3a3a;
 }
 
 .navBar .navBarItems a {
   display: flex;
-<<<<<<< HEAD
-  flex-direction: column;
-  align-items: center;
-  color: #bababa;
-  font-size: 75px;
-=======
   align-items: center;
   justify-content: center;
   height: 60px; /* Reduced height */
@@ -53,7 +36,6 @@ body {
 
 .navBar .navBarItems a:hover img {
   transform: scale(1.1); /* Slightly increase size on hover */
->>>>>>> 165a0a237cf07db2f6799baa6749165599d45254
 }
 
 .settingsContainer {
