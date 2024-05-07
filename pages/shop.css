@@ -61,6 +61,7 @@ body.shop {
     margin: 0 300px; /* Ensures margin around the container */
     width: 100%; /* Makes sure it fills the space it's given but not more */
     max-width: 1200px; /* Maximum width the container can reach */
+    min-height: 144px ;
 }
 
 .top-scroll .image-container {
