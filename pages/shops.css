@@ -38,7 +38,7 @@ body.shop {
 
 .item button {
     padding: 8px 16px;
-    background-color: #5cb85c;
+    background-color: #000000;
     color: white;
     border: none;
     cursor: pointer;
@@ -46,7 +46,7 @@ body.shop {
 }
 
 .item button:hover {
-    background-color: #4cae4c;
+    background-color: #141414;
 }
 
 .item-price {
