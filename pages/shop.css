@@ -31,7 +31,7 @@ body.shop {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto 1fr;
-    gap: 10px;
+    gap: 12px;
     height: calc(100vh - 60px);
     padding: 5px;
     box-sizing: border-box;
@@ -48,7 +48,7 @@ body.shop {
     background-color: #251a1a;
     border-radius: 10px;
     white-space: nowrap;
-    gap: 12px;
+    gap: 15px;
     width: 1050px;
 }
 
