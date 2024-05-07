@@ -8,20 +8,31 @@ body {
 }
 
 .navBar {
-    position: fixed;
-    width: 100%;
-    height: 50px;
-    background: #3a3a3a;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 60px; 
+    height: 100vh;
+    background: #3a3a3a;
 }
 
 .navBar .navBarItems a {
-    color: #bababa;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 60px;
+    color: #bababa;
+}
+
+.navBar .navBarItems a img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+.navBar .navBarItems a:hover img {
+    transform: scale(1.1); 
 }
