@@ -3,7 +3,7 @@ body.shop {
     flex-direction: column;
     height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 0px; /* Adds padding to ensure no container touches the window edges */
     background-image: url('/icons/locker_bg.png');
     background-size: cover;
     background-position: center;
@@ -24,23 +24,32 @@ body.shop {
     color: #000000;
     padding: 5px;
     background-color: #d4d4d48f;
-    width: 100%;
+    width: 110%;
+    margin: 0; /* Centers the title */
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto 1fr;
-    gap: 12px;
+    gap: 15px; /* Adjusts the gap between containers */
     height: calc(100vh - 60px);
-    padding: 5px;
+    padding: 0;
+    margin: 20px; /* Adds margin to the container to ensure no touching the edges */
     box-sizing: border-box;
+}
+
+.top-scroll, .left-scroll, .bottom-right {
+    background-color: #251a1a;
+    padding: 10px;
+    border-radius: 10px; /* Ensure rounded corners for all containers */
+    margin: 40px; /* Ensure spacing from the edges and between containers */
 }
 
 .top-scroll {
     grid-column: 1 / -1;
     grid-row: 1;
-    overflow-x: auto;
+    overflow-x: hidden;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -49,14 +58,16 @@ body.shop {
     border-radius: 10px;
     white-space: nowrap;
     gap: 15px;
-    width: 1050px;
+    margin: 0 300px; /* Ensures margin around the container */
+    width: 100%; /* Makes sure it fills the space it's given but not more */
+    max-width: 1200px; /* Maximum width the container can reach */
 }
 
 .top-scroll .image-container {
-    display: inline-flex;
-    flex: 0 0 auto;
-    width: 200px;
-    height: 120px;
+    flex: 0 0 auto; /* Do not grow or shrink */
+    width: 200px; /* Fixed width */
+    height: 120px; /* Fixed height */
+    margin-right: 30px; /* Space between images */
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
@@ -75,15 +86,10 @@ body.shop {
     z-index: 10;
 }
 
-.top-scroll .image-container:hover img {
-    filter: brightness(1.2);
-}
-
-
 .left-scroll {
     grid-column: 1;
     grid-row: 2;
-    overflow-y: auto;
+    overflow-y: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,22 +97,22 @@ body.shop {
     background-color: #291818;
     border-radius: 10px;
     max-width: 250px;
-    height: 350px;
-    margin: 10px 20px 10px 10px;
+    aspect-ratio: 1 / 1.68;  /* This maintains a consistent ratio as it resizes */
+    margin: 0 40px 0 300px; /* Ensures margin around the container */
 }
 
 .left-scroll .image-container {
-    width: 100%;
+    width: 100%; /* Ensures images scale with the container */
     margin: 10px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .left-scroll img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
-
 .bottom-right {
     grid-column: 2;
     grid-row: 2;
@@ -118,29 +124,21 @@ body.shop {
     gap: 10px;
     align-items: center;
     justify-content: start;
-    height: 800px;
+    height: 800px; /* Adjust height as necessary */
     width: 100%;
-    overflow: hidden;
-}
-
-.hot-items-title {
-    font-size: 24px;
-    color: #fff;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    padding: 5px 0;
-    width: 100%;
-    text-align: center;
-    background-color: transparent;
+    max-width: 800px; /* Maximum width the container can reach */
+    overflow-x: auto; /* Allows horizontal scrolling within the container */
+    margin: 0px 400px 100px 10px; /* Ensures the container doesn't touch the edges */
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    margin: 0;
     width: 100%;
     padding: 0;
+    overflow-y: auto; /* Adds vertical scroll if needed */
+    max-height: 750px; /* Limit height to prevent overflow */
 }
 
 .item {
