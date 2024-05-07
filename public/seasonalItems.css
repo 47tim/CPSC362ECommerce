@@ -1,0 +1,94 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-image: url(/icons/locker_bg.png);
+}
+
+.skins {
+  width: 200px;
+  height: auto;
+}
+
+.underImg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.priceTag {
+  font-size: 15px;
+  color: #d9d9d9;
+}
+
+.pageTitle {
+  color: black;
+  margin-left: 200px;
+  font-size: 50px;
+}
+
+.topBar {
+  width: 100vw;
+  height: 100px;
+
+  background-color: #d9d9d9;
+}
+
+.skinContainer {
+  margin-left: 100px;
+  margin-top: 100px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  border: 2px solid;
+  width: 250px;
+  height: 200px;
+}
+
+.buyButton {
+  width: 100%;
+}
+
+/* Navbar styling */
+.navBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 60px; /* Reduced width */
+  height: 100vh;
+  background: #3a3a3a;
+}
+
+.navBar .navBarItems a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px; /* Reduced height */
+  color: #bababa;
+}
+
+.navBar .navBarItems a img {
+  width: 30px; /* Adjust icon size */
+  height: auto;
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.navBar .navBarItems a:hover img {
+  transform: scale(1.1); /* Slightly increase size on hover */
+}

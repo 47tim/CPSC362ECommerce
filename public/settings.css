@@ -4,7 +4,7 @@ body {
 
 .main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 <<<<<<< HEAD
 .navBar {
@@ -72,6 +72,17 @@ body {
   background-color: #d9d9d9;
   height: 600px;
   width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.profileImg {
+  width: 250px;
+  height: auto;
+
+  margin-left: 150px;
 }
 
 .accountInfo {
@@ -86,6 +97,9 @@ body {
 .accountBalanceContainer {
   background-color: #d9d9d9;
   margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .accountBalance {
