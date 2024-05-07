@@ -1,4 +1,5 @@
 function handleLogin() {
+<<<<<<< HEAD
   // var password = document.getElementById("password-input").value;
   // var userName = document.getElementById("username-input").value;
 
@@ -30,4 +31,13 @@ function handleLogin() {
   })
 
   window.location.href = "pages/index.ejs";
+=======
+  var password = document.getElementById("password-input").value;
+  var userName = document.getElementById("username-input").value;
+
+  console.log(userName);
+  console.log(password);
+
+  window.location.href = "pages/locker.html";
+>>>>>>> 165a0a237cf07db2f6799baa6749165599d45254
 }
