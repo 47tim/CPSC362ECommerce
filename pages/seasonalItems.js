@@ -1,29 +1,46 @@
-var userBalance = 1000;
+document.addEventListener("DOMContentLoaded", function () {
+  var userBalance = parseInt(localStorage.getItem("userBalance")) || 0;
 
-function confirmPurchase(itemName, price) {
-  if (userBalance < price) {
-    alert("Insufficient funds!");
-    return;
+  // Display user balance in coinBar
+  var coinBarElement = document.querySelector(".coinBar");
+  if (coinBarElement) {
+    coinBarElement.innerText = "Coins: " + userBalance;
+  } else {
+    console.error("Element with class 'coinBar' not found.");
   }
 
-  var confirmPurchase = confirm(
-    "Are you sure you want to buy " + itemName + " for " + price + " Coins?"
-  );
+  function confirmPurchase(itemName, price) {
+    if (userBalance < price) {
+      alert("Insufficient funds!");
+      return;
+    }
 
-  if (confirmPurchase) {
-    userBalance -= price;
+    var confirmPurchase = confirm(
+      "Are you sure you want to buy " + itemName + " for " + price + " Coins?"
+    );
 
-    document.querySelector(".coinBar").innerText = "Coins: " + userBalance;
+    if (confirmPurchase) {
+      userBalance -= price;
 
-    purchasedItemName = itemName;
-    purchasedItemPrice = price;
-    purchaseDate = new Date();
+      // Update user balance display
+      var coinBarElement = document.querySelector(".coinBar");
+      if (coinBarElement) {
+        coinBarElement.innerText = "Coins: " + userBalance;
+      } else {
+        console.error("Element with class 'coinBar' not found.");
+      }
 
-    // Save purchase details to local storage
-    localStorage.setItem("purchasedItemName", purchasedItemName);
-    localStorage.setItem("purchasedItemPrice", purchasedItemPrice);
-    localStorage.setItem("purchaseDate", purchaseDate);
+      purchasedItemName = itemName;
+      purchasedItemPrice = price;
+      purchaseDate = new Date();
 
-    alert("Purchase successful!");
+      // Save purchase details to local storage
+      localStorage.setItem("userBalance", userBalance);
+      localStorage.setItem("purchasedItemName", purchasedItemName);
+      localStorage.setItem("purchasedItemPrice", purchasedItemPrice);
+      localStorage.setItem("purchaseDate", purchaseDate);
+
+      alert("Purchase successful!");
+    }
   }
-}
+});
