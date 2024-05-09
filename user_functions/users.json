@@ -1,0 +1,21 @@
+{
+    "users": [
+        {
+            "username": "john_doe",
+            "cart": [
+                {
+                    "productId": "123",
+                    "productName": "Product 1",
+                    "quantity": 2,
+                    "price": 20.99
+                },
+                {
+                    "productId": "456",
+                    "productName": "Product 2",
+                    "quantity": 1,
+                    "price": 15.99
+                }
+            ]
+        }
+    ]
+}

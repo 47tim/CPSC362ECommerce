@@ -1,159 +1,59 @@
-const User = require("../model/User")
-const bcrypt = require("bcryptjs")
-const jwt = require('jsonwebtoken')
-cont jwSecret = '5e96da2f7db1a344114e2b4333dd2462b6d6bd9f942aca2d9298c21c71828fed5db5fc'
+const fs = require('fs');
+const path = require('path');
 
+// Function to register a new user
+function registerUser(username, email, password) {
+    let userData = loadUserData();
 
-exports.register = async (req, res, next) => {
-  const { username, password } = req.body
-  if (password.length < 6) {
-    return res.status(400).json({ message: "Password less than 6 characters" })
-  }
-
-  // try {
-  //   await User.create({
-  //     username,
-  //     password,
-  //   }).then(user =>
-  //     res.status(200).json({
-  //       message: "User successfully created",
-  //       user,
-  //     })
-  //   )
-  // } catch (err) {
-  //   res.status(401).json({
-  //     message: "User not successful created",
-  //     error: error.mesage,
-  //   })
-  // }
-
-  bcrypt.hash(password, 10).then(async (hash) => {
-    await User.create({
-      username,
-      password: hash,
-    })
-    .then((user) => {
-      const maxAge = 3 * 60 * 60;
-      const token = jwt.sign(
-        { id: user._id, username, role: user.role },
-        jwtSecret,
-        {
-          expiresIn: maxAge, // 3hrs in sec
-        }
-      );
-      res.cookie("jwt", token, {
-        httpOnly: true,
-        maxAge: maxAge * 1000, // 3hrs in ms
-      });
-      res.status(201).json({
-        message: "User successfully created",
-        user: user._id,
-      });
-    })
-    .catch((error) =>
-      res.status(400).json({
-      message: "User not successful created",
-      error: error.message,
-      })
-    );
-  });
-}
-  //     .then((user) =>
-  //       res.status(200).json({
-  //         message: "User successfully created",
-  //          user,
-  //       })
-  //     )
-  //     .catch((error) =>
-  //       res.status(400).json({
-  //         message: "User not successful created",
-  //         error: error.message,
-  //       })
-  //     );
-  // });
-
-// exports.login = async (req, res, next) => {
-//   try {
-//     const user = await User.findOne({ username, password })
-//     if (!user) {
-//       res.status(401).json({
-//         message: "Login not successful",
-//         error: "User not found",
-//       })
-//     } else {
-//       res.status(200).json({
-//         message: "Login successful",
-//         user,
-//       })
-//     }
-//   } catch (error) {
-//     res.status(400).json({
-//       message: "An error occurred",
-//       error: error.message,
-//     })
-//   }
-// }
-
-exports.login = async (req, res, next) => {
-  const { username, password } = req.body
-  // Check if username and password is provided
-  if (!username || !password) {
-    return res.status(400).json({
-      message: "Username or Password not present",
-    })
-  }
-  try {
-    const user = await User.findOne({ username })
-    if (!user) {
-      res.status(400).json({
-        message: "Login not successful",
-        error: "User not found",
-      })
-    } else {
-      // comparing given password with hashed password
-      bcrypt.compare(password, user.password).then(function (result) {
-        if (result) {
-          const maxAge = 3 * 60 * 60;
-          const token = jwt.sign(
-            { id: user._id, username, role: user.role },
-            jwtSecret,
-            {
-              expiresIn: maxAge, // 3hrs in sec
-            }
-          );
-          res.cookie("jwt", token, {
-            httpOnly: true,
-            maxAge: maxAge * 1000, // 3hrs in ms
-          });
-          res.status(201).json({
-            message: "User successfully Logged in",
-            user: user._id,
-          });
-        } else {
-          res.status(400).json({ message: "Login not succesful" });
-        }
-      });
+    const userExists = userData.users.some(user => user.username === username || user.email === email);
+    if (userExists) {
+        return { success: false, message: "Username or email already exists" };
     }
-  } catch (error) {
-    res.status(400).json({
-      message: "An error occurred",
-      error: error.message,
-    })
-  }
 
-  exports.getUsers = async (req, res, next) => {
-  await User.find({})
-    .then(users => {
-      const userFunction = users.map(user => {
-        const container = {}
-        container.username = user.username
-        container.role = user.role
-        return container
-      })
-      res.status(200).json({ user: userFunction })
-    })
-    .catch(err =>
-      res.status(401).json({ message: "Not successful", error: err.message })
-    )
-  }
+    userData.users.push({ username, email, password });
+
+    saveUserData(userData);
+
+    return { success: true, message: "User registered successfully" };
 }
+
+// Function to authenticate user login
+function loginUser(username, password) {
+    let userData = loadUserData();
+
+    const user = userData.users.find(user => user.username === username);
+
+    if (!user) {
+        return { success: false, message: "User not found" };
+    }
+
+    if (user.password !== password) {
+        return { success: false, message: "Incorrect password" };
+    }
+
+    return { success: true, message: "Login successful" };
+}
+
+// Function to load user data from JSON file
+function loadUserData() {
+    const filePath = path.join(__dirname, 'users.json');
+    try {
+        const data = fs.readFileSync(filePath, 'utf8');
+        return JSON.parse(data);
+    } catch (err) {
+        return { users: [] };
+    }
+}
+
+// Function to save user data to JSON file
+function saveUserData(userData) {
+    const filePath = path.join(__dirname, 'users.json');
+    fs.writeFileSync(filePath, JSON.stringify(userData, null, 4));
+}
+
+// Example usage
+// registerUser('john_doe', 'john@example.com', 'password123');
+// const loginResult = loginUser('john_doe', 'password123');
+// console.log(loginResult);
+
+module.exports = { registerUser, loginUser, loadUserData, saveUserData };
